@@ -1,0 +1,310 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    height: 100vh;
+    background-color: #253900;
+    color: #EEEEEE
+}
+
+.All-Container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    margin: 0 20px;
+}
+
+/* card container Section */
+.card-Container {
+    height: 500px;
+    width: 600px;
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #000000;
+}
+
+.Section {
+    height: 24%;
+    width: 96%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2px 0 2px 0;
+}
+
+.card {
+    height: 96%;
+    width: 24%;
+    margin: 0 2px 0 2px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.card.flipped {
+    transform: rotateY(180deg);
+}
+
+.card .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 8px;
+}
+
+.card .front {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+}
+
+
+/* card back face images */
+.card .back {
+    background-image: url(media/back.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* card front face images */
+#card-1 .front {
+    background-image: url(media/photo-1.jpg);
+    background-size: cover;
+    background-position: top;
+}
+
+#card-2 .front {
+    background-image: url(media/photo-2.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+#card-3 .front {
+    background-image: url(media/photo-3.jpg);
+    background-size: cover;
+    background-position: bottom;
+}
+
+#card-4 .front {
+    background-image: url(media/photo-4.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+#card-5 .front {
+    background-image: url(media/photo-5.jpg);
+    background-size: cover;
+    background-position: top;
+}
+
+#card-6 .front {
+    background-image: url(media/photo-6.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+#card-7 .front {
+    background-image: url(media/photo-7.jpg);
+    background-size: cover;
+    background-position: top;
+}
+
+#card-8 .front {
+    background-image: url(media/photo-8.jpg);
+    background-size: cover;
+    background-position: top;
+}
+
+
+#card-9 .front {
+    background-image: url(media/photo-1.jpg);
+    background-size: cover;
+    background-position: top;
+}
+
+#card-10 .front {
+    background-image: url(media/photo-2.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+#card-11 .front {
+    background-image: url(media/photo-3.jpg);
+    background-size: cover;
+    background-position: bottom;
+}
+
+#card-12 .front {
+    background-image: url(media/photo-4.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+#card-13 .front {
+    background-image: url(media/photo-5.jpg);
+    background-size: cover;
+    background-position: top;
+}
+
+#card-14 .front {
+    background-image: url(media/photo-6.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+#card-15 .front {
+    background-image: url(media/photo-7.jpg);
+    background-size: cover;
+    background-position: top;
+}
+
+#card-16 .front {
+    background-image: url(media/photo-8.jpg);
+    background-size: cover;
+    background-position: top;
+}
+
+
+
+/* Left side Information Panel */
+.Info-left {
+    height: 500px;
+    width: 250px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    background-color: #08CB00;
+}
+
+.left-elements {
+    margin: 20px 0;
+}
+
+.Instructions {
+    text-align: center;
+}
+.Game-Name {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #000000; /* white text */
+    text-shadow: 0 0 8px #08CB00;
+}
+
+.Instructions {
+  background-color: #253900;
+  border: 2px solid #08CB00;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  color: #FFFFFF; /* white text */
+}
+
+.Instructions h2 {
+  color: #FFFFFF; /* white */
+  margin-bottom: 10px;
+}
+
+.Instructions p {
+  color: #FFFFFF; /* white */
+  margin: 6px 0;
+}
+
+#start-game {
+  background-color: darkgreen;
+  color: #FFFFFF; /* white text */
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+
+
+
+/* Right side Information Panel */
+.Info-right {
+    height: 500px;
+    width: 250px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    background-color: #08CB00;
+}
+
+.right-elements {
+    margin: 20px 0;
+    color: #FFFFFF; /* white text */
+}
+
+.right-elements p {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #FFFFFF;
+}
+
+.Winner {
+    text-align: center;
+    font-weight: bold;
+    font-size: 2.5rem;
+    color: #000000; /* white text */
+    text-shadow: 0 0 8px #08CB00;
+}
+
+.Game-stats {
+  background-color: #253900;
+  border: 2px solid #08CB00;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.Game-stats h2 {
+  color: #FFFFFF; /* white */
+  margin-bottom: 10px;
+}
+
+.Game-stats p {
+  color: #FFFFFF; /* white */
+  margin: 6px 0;
+}
+
+#reset-game {
+  background-color: darkgreen;
+  color: #FFFFFF;
+  font-size: 1.1rem;
+  padding: 8px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
