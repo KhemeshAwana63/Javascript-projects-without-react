@@ -1,7 +1,7 @@
-//Randomly Selecting the places of the photos
-
-let strbtn = document.querySelector("#start-game")
-let timer = document.querySelector("#time")
+//TIMER LOGIC FOR START AND RESET BUTTON
+let strbtn = document.querySelector("#start-game");
+let rstbtn = document.querySelector("#reset-game");
+let timer = document.querySelector("#time");
 
 let elapsed = 0;
 let previouslyElapsed = 0;
@@ -30,7 +30,7 @@ function stopTimer() {
 
 
 strbtn.addEventListener("click" , function() {
-    if (strbtn.innerText === "Start Game"){
+    if (strbtn.innerText === "Start Game") {
         strbtn.innerText = "Pause";
         let startTime = Date.now();
         startTimer(startTime);
@@ -48,63 +48,91 @@ strbtn.addEventListener("click" , function() {
 })
 
 
-let rstbtn = document.querySelector("#reset-game");
 rstbtn.addEventListener("click", () => {
+    strbtn.style.visibility = "visible";
     stopTimer();
     timer.innerText = "00:00";
-    strbtn.innerText = "Start Game"
+    strbtn.innerText = "Start Game";
+    document.querySelector("#moves").innerText = 0;
     elapsed = 0;
     previouslyElapsed = 0;
+    moveCount = 0;
+    document.querySelector(".Winner").innerText = "";
+    setTimeout(() => {
+        for (combos of flippedCardsCombos){
+            for (card of combos) {
+                card.classList.remove("flipped")
+            }
+        }
+        flippedCardsCombos = [];
+    },600);
 })
 
 
 
 
-
-
-
-
-
-
 //Flipping Logic
-
 let flippedCardsCombos = [];
-let cardCombo = [];
-let cardAttributes = [];
+let curCardCombo = [];
 let lockboard = false;
+let moveCount = 0;
 
-for (let i = 1 ; i < 17 ; i++) {
-    let card = document.querySelector(`#card-${i}`)
-    card.addEventListener("click" , ()=>{
-        if (lockboard) return;
-        if (cardCombo.includes(card)) return;
+function cardMatching() {
+    if (curCardCombo[0].getAttribute("data-card") === curCardCombo[1].getAttribute("data-card")){
+        setTimeout(() => {
+        flippedCardsCombos.push([...curCardCombo]);
 
-        card.classList.add("flipped");
-        cardAttributes.push(card.getAttribute("data-card"))
-        cardCombo.push(card)
+        //Checking for winner
+        if (flippedCardsCombos.length === 8) {
+            document.querySelector(".Winner").innerText = `Congratulatins you have completed the game in given time and moves`;
+            strbtn.style.visibility = "hidden";
+            stopTimer();
+        };
 
-        if (cardCombo.length === 2) {
-            if (cardAttributes[0] === cardAttributes[1]){
-                flippedCardsCombos.push([...cardCombo]);
-                cardAttributes = [];
-                cardCombo = [];
+            curCardCombo = [];
+            lockboard = false;
+        },600)
+    }
+    else {
+        setTimeout(() => {
+            for (card of curCardCombo) {
+                card.classList.remove("flipped")
             }
-            else {
-                lockboard = true
-                setTimeout(() => {
-                cardCombo[0].classList.remove("flipped");
-                cardCombo[1].classList.remove("flipped");
-                cardCombo = [];
-                cardAttributes = [];
-                lockboard = false;
-                },600)
-
-            }
-        }
-    })
+            curCardCombo = [];
+            lockboard = false;
+        },600);
+    }
 }
 
 
+let cards = document.querySelectorAll(".card")
+cards.forEach(card => {
+    card.addEventListener("click" , ()=>{
+    //Do not let the game run untill start and resume buttons are pressed
+    if ((strbtn.innerText === "Start Game") || (strbtn.innerText === "Resume")) return;
+    //To make sure no clicks happen when checking the condition
+    if (lockboard) return;
+    //to make matched card unclickable
+    for (Combo of flippedCardsCombos){
+        if (Combo.includes(card)) return;
+    }
 
+    card.classList.add("flipped");
+    curCardCombo.push(card);
 
+    //Preventing double clicking of the same card
+    if (curCardCombo.length === 2) {
+        if (curCardCombo[0] === curCardCombo[1]) {
+            curCardCombo.pop();
+            return
+        };
+    }
 
+    if (curCardCombo.length === 2) {
+        lockboard = true;
+        moveCount = moveCount + 1;
+        cardMatching();
+        document.querySelector("#moves").innerText = moveCount;
+    }
+})
+})

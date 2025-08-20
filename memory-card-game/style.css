@@ -89,102 +89,23 @@ body {
 
 
 /* card front face images */
-#card-1 .front {
-    background-image: url(media/photo-1.jpg);
-    background-size: cover;
-    background-position: top;
-}
+#card-1 .front  { background-image: url(media/photo-5.jpg); background-size: cover; background-position: top; }
+#card-2 .front  { background-image: url(media/photo-2.jpg); background-size: cover; background-position: center; }
+#card-3 .front  { background-image: url(media/photo-7.jpg); background-size: cover; background-position: top; }
+#card-4 .front  { background-image: url(media/photo-1.jpg); background-size: cover; background-position: top; }
+#card-5 .front  { background-image: url(media/photo-6.jpg); background-size: cover; background-position: center; }
+#card-6 .front  { background-image: url(media/photo-3.jpg); background-size: cover; background-position: bottom; }
+#card-7 .front  { background-image: url(media/photo-4.jpg); background-size: cover; background-position: center; }
+#card-8 .front  { background-image: url(media/photo-8.jpg); background-size: cover; background-position: top; }
+#card-9 .front  { background-image: url(media/photo-2.jpg); background-size: cover; background-position: center; }
+#card-10 .front { background-image: url(media/photo-1.jpg); background-size: cover; background-position: top; }
+#card-11 .front { background-image: url(media/photo-6.jpg); background-size: cover; background-position: center; }
+#card-12 .front { background-image: url(media/photo-7.jpg); background-size: cover; background-position: top; }
+#card-13 .front { background-image: url(media/photo-5.jpg); background-size: cover; background-position: top; }
+#card-14 .front { background-image: url(media/photo-8.jpg); background-size: cover; background-position: top; }
+#card-15 .front { background-image: url(media/photo-3.jpg); background-size: cover; background-position: bottom; }
+#card-16 .front { background-image: url(media/photo-4.jpg); background-size: cover; background-position: center; }
 
-#card-2 .front {
-    background-image: url(media/photo-2.jpg);
-    background-size: cover;
-    background-position: center;
-}
-
-#card-3 .front {
-    background-image: url(media/photo-3.jpg);
-    background-size: cover;
-    background-position: bottom;
-}
-
-#card-4 .front {
-    background-image: url(media/photo-4.jpg);
-    background-size: cover;
-    background-position: center;
-}
-
-#card-5 .front {
-    background-image: url(media/photo-5.jpg);
-    background-size: cover;
-    background-position: top;
-}
-
-#card-6 .front {
-    background-image: url(media/photo-6.jpg);
-    background-size: cover;
-    background-position: center;
-}
-
-#card-7 .front {
-    background-image: url(media/photo-7.jpg);
-    background-size: cover;
-    background-position: top;
-}
-
-#card-8 .front {
-    background-image: url(media/photo-8.jpg);
-    background-size: cover;
-    background-position: top;
-}
-
-
-#card-9 .front {
-    background-image: url(media/photo-1.jpg);
-    background-size: cover;
-    background-position: top;
-}
-
-#card-10 .front {
-    background-image: url(media/photo-2.jpg);
-    background-size: cover;
-    background-position: center;
-}
-
-#card-11 .front {
-    background-image: url(media/photo-3.jpg);
-    background-size: cover;
-    background-position: bottom;
-}
-
-#card-12 .front {
-    background-image: url(media/photo-4.jpg);
-    background-size: cover;
-    background-position: center;
-}
-
-#card-13 .front {
-    background-image: url(media/photo-5.jpg);
-    background-size: cover;
-    background-position: top;
-}
-
-#card-14 .front {
-    background-image: url(media/photo-6.jpg);
-    background-size: cover;
-    background-position: center;
-}
-
-#card-15 .front {
-    background-image: url(media/photo-7.jpg);
-    background-size: cover;
-    background-position: top;
-}
-
-#card-16 .front {
-    background-image: url(media/photo-8.jpg);
-    background-size: cover;
-    background-position: top;
-}
 
 
 
@@ -212,7 +133,7 @@ body {
 .Game-Name {
     text-align: center;
     font-size: 2.5rem;
-    color: #000000; /* white text */
+    color: #000000; 
     text-shadow: 0 0 8px #08CB00;
 }
 
@@ -222,27 +143,28 @@ body {
   padding: 15px;
   border-radius: 10px;
   margin-bottom: 20px;
-  color: #FFFFFF; /* white text */
+  color: #FFFFFF; 
 }
 
 .Instructions h2 {
-  color: #FFFFFF; /* white */
+  color: #FFFFFF; 
   margin-bottom: 10px;
 }
 
 .Instructions p {
-  color: #FFFFFF; /* white */
+  color: #FFFFFF; 
   margin: 6px 0;
 }
 
 #start-game {
   background-color: darkgreen;
-  color: #FFFFFF; /* white text */
+  color: #FFFFFF;
   font-size: 1.2rem;
   padding: 10px 20px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  visibility: visible;
 }
 
 
@@ -264,7 +186,7 @@ body {
 
 .right-elements {
     margin: 20px 0;
-    color: #FFFFFF; /* white text */
+    color: #FFFFFF; 
 }
 
 .right-elements p {
@@ -276,8 +198,8 @@ body {
 .Winner {
     text-align: center;
     font-weight: bold;
-    font-size: 2.5rem;
-    color: #000000; /* white text */
+    font-size: 1.5rem;
+    color: #000000; 
     text-shadow: 0 0 8px #08CB00;
 }
 
@@ -290,12 +212,12 @@ body {
 }
 
 .Game-stats h2 {
-  color: #FFFFFF; /* white */
+  color: #FFFFFF; 
   margin-bottom: 10px;
 }
 
 .Game-stats p {
-  color: #FFFFFF; /* white */
+  color: #FFFFFF; 
   margin: 6px 0;
 }
 
