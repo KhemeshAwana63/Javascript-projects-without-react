@@ -64,6 +64,7 @@ rstbtn.addEventListener("click", () => {
                 card.classList.remove("flipped")
             }
         }
+        curCardCombo[0].classList.remove("flipped");
         flippedCardsCombos = [];
     },600);
 })
